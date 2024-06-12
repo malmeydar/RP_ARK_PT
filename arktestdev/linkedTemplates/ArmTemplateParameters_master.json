@@ -8,6 +8,9 @@
 		"LknConnectBDTest_password": {
 			"value": ""
 		},
+		"LknDataBrick_accessToken": {
+			"value": ""
+		},
 		"LknConnectBDTest_properties_typeProperties_server": {
 			"value": "arkserverprueba.database.windows.net"
 		},

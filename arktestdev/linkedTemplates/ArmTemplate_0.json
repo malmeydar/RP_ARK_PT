@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LknConnectBDTest'"
 		},
+		"LknDataBrick_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'LknDataBrick'"
+		},
 		"LknConnectBDTest_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "arkserverprueba.database.windows.net"
@@ -46,6 +50,24 @@
 					"password": {
 						"type": "SecureString",
 						"value": "[parameters('LknConnectBDTest_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LknDataBrick')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureDatabricksDeltaLake",
+				"typeProperties": {
+					"domain": "https://adb-8688012824334464.4.azuredatabricks.net",
+					"clusterId": "0612-161741-znog4bb3",
+					"accessToken": {
+						"type": "SecureString",
+						"value": "[parameters('LknDataBrick_accessToken')]"
 					}
 				}
 			},
